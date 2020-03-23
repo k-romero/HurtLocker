@@ -170,20 +170,4 @@ public class Main {
     public ArrayList<Item> getItems() {
         return items;
     }
-
-    public String countMilkMatches(String text){
-        return null;
-    }
-
-    public String countBreadMatches(String text){
-        return null;
-    }
-
-    public String countCookieMatches(String text){
-        return null;
-    }
-
-    public String countAppleMatches(String text){
-        return null;
-    }
 }
