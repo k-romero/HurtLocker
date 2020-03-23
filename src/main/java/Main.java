@@ -1,5 +1,7 @@
 import org.apache.commons.io.IOUtils;
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Main {
 
@@ -14,4 +16,24 @@ public class Main {
         System.out.println(output);
 
     }
+
+    public void getNamesAndPrices(String text){
+        String input = text;
+        String patStr = "\\w*(:|)\\w+[;:*!@#$%^&()_\"]+\\w*(:|)+\\d+[.]+\\d+\\d";
+        Pattern pattern = Pattern.compile(patStr);
+        Matcher matcher = pattern.matcher(input);
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; matcher.find() ; i++) {
+            builder.append(matcher.group() + "\n");
+        }
+
+        System.out.println(builder.toString());
+    }
+
+
+    //Match everything with name+price
+    // \w*:\w+[;:*!@#$%^&()_"]\w*:+\d+[.]+\d+\d
+
+    //refined
+    // \w*(:|)\w+[;:*!@#$%^&()_"]+\w*(:|)+\d+[.]+\d+\d
 }
