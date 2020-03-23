@@ -21,4 +21,12 @@ public class MainTest {
         String testString = test.getNamesAndPrices(test.readRawDataToString());
         System.out.println(test.removePrice(test.removeName(testString)));
     }
+
+    @Test
+    public void findGroupsTest() throws Exception {
+        Main test = new Main();
+        String testString = test.getNamesAndPrices(test.readRawDataToString());
+        String useThisString = test.removePrice(test.removeName(testString));
+        test.parseStringToItems(useThisString);
+    }
 }

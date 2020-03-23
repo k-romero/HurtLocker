@@ -63,7 +63,14 @@ public class Main {
         return newString;
     }
 
-    public void parseStringToItems(){
+    public void parseStringToItems(String input){
+        //(\w*);((\d.\d\d))
+        String patStr = "(\\w*);((\\d.\\d\\d))";
+        Pattern pattern = Pattern.compile(patStr);
+        Matcher matcher = pattern.matcher(input);
+        for (int i = 0; matcher.find(); i++) {
+            System.out.println("Grp1 = " + matcher.group(1) + " Grp2 = " + matcher.group(2));
+        }
 
     }
 
